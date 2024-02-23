@@ -1,0 +1,76 @@
+﻿<Window x:Class="lab1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab1"
+        mc:Ignorable="d"
+        Title="Bisection" Height="600" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label HorizontalContentAlignment="Center" FontSize="20">Метод поділу на відрізки</Label>
+
+        <Grid Grid.Row="1">
+            <Label>1) 3^x + 2x - 3 = 0</Label>
+            
+            <Label Margin="0,30,0,0">a = </Label>
+            <TextBox Name="a1" Height="20" Width="50" HorizontalAlignment="Left" Margin="30,0,0,45"/>
+
+            <Label Margin="100,30,0,0">b =</Label>
+            <TextBox Name="b1" Height="20" Width="50" HorizontalAlignment="Left" Margin="130,0,0,45"/>
+
+            <Label Margin="0,60,0,0">Результат =</Label>
+            <Label Name="Result1" Content="" Margin="70,60,0,0"/>
+            <Button Name="firstBtn" Height="25" Width="80" HorizontalAlignment="Left" Margin="5,70,0,0" Click="firstBtn_Click">Обчислення</Button>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Label>2) 3x^4 - 8x^3 - 18x^2 + 2 = 0</Label>
+
+            <Label Margin="0,30,0,0">a =</Label>
+            <TextBox Name="a2" Height="20" Width="50" HorizontalAlignment="Left" Margin="30,0,0,45"/>
+
+            <Label Margin="100,30,0,0">b =</Label>
+            <TextBox Name="b2" Height="20" Width="50" HorizontalAlignment="Left" Margin="130,0,0,45"/>
+
+            <Label Margin="0,60,0,0">Результат =</Label>
+            <Label Name="Result2" Content="" Margin="70,60,0,0"/>
+            <Button Name="secondBtn" Height="25" Width="80" HorizontalAlignment="Left" Margin="5,70,0,0" Click="secondBtn_Click">Обчислення</Button>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Label>3) x^2 - 4 + 0.5^x = 0</Label>
+
+            <Label Margin="0,30,0,0">a =</Label>
+            <TextBox Name="a3" Height="20" Width="50" HorizontalAlignment="Left" Margin="30,0,0,45"/>
+
+            <Label Margin="100,30,0,0">b =</Label>
+            <TextBox Name="b3" Height="20" Width="50" HorizontalAlignment="Left" Margin="130,0,0,45"/>
+
+            <Label Margin="0,60,0,0">Результат =</Label>
+            <Label Name="Result3" Content="" Margin="70,60,0,0"/>
+            <Button Name="thirdBtn" Height="25" Width="80" HorizontalAlignment="Left" Margin="5,70,0,0" Click="thirdBtn_Click">Обчислення</Button>
+        </Grid>
+
+        <Grid Grid.Row="4">
+            <Label>4) (x - 2)^2 * lg(x + 11) = 1</Label>
+
+            <Label Margin="0,30,0,0">a =</Label>
+            <TextBox Name="a4" Height="20" Width="50" HorizontalAlignment="Left" Margin="30,0,0,45"/>
+
+            <Label Margin="100,30,0,0">b =</Label>
+            <TextBox Name="b4" Height="20" Width="50" HorizontalAlignment="Left" Margin="130,0,0,45"/>
+
+            <Label Margin="0,60,0,0">Результат =</Label>
+            <Label Name="Results4" Content="" Margin="70,60,0,0"/>
+            <Button Name="forthBtn" Height="25" Width="80" HorizontalAlignment="Left" Margin="5,70,0,0" Click="forthBtn_Click">Обчислення</Button>
+        </Grid>
+    </Grid>
+</Window>
