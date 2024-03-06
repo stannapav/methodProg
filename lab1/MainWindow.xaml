@@ -21,10 +21,10 @@
             <Label>1) 3^x + 2x - 3 = 0</Label>
             
             <Label Margin="0,30,0,0">a = </Label>
-            <TextBox Name="a1" Height="20" Width="50" HorizontalAlignment="Left" Margin="30,0,0,45"/>
+            <TextBox Name="a1" TextChanged="a1_TextChanged" Height="20" Width="50" HorizontalAlignment="Left" Margin="30,0,0,45"/>
 
             <Label Margin="100,30,0,0">b =</Label>
-            <TextBox Name="b1" Height="20" Width="50" HorizontalAlignment="Left" Margin="130,0,0,45"/>
+            <TextBox Name="b1" TextChanged="b1_TextChanged" Height="20" Width="50" HorizontalAlignment="Left" Margin="130,0,0,45"/>
 
             <Label Margin="0,60,0,0">Результат =</Label>
             <Label Name="Result1" Content="" Margin="70,60,0,0"/>
@@ -35,10 +35,10 @@
             <Label>2) 3x^4 - 8x^3 - 18x^2 + 2 = 0</Label>
 
             <Label Margin="0,30,0,0">a =</Label>
-            <TextBox Name="a2" Height="20" Width="50" HorizontalAlignment="Left" Margin="30,0,0,45"/>
+            <TextBox Name="a2" TextChanged="a2_TextChanged" Height="20" Width="50" HorizontalAlignment="Left" Margin="30,0,0,45"/>
 
             <Label Margin="100,30,0,0">b =</Label>
-            <TextBox Name="b2" Height="20" Width="50" HorizontalAlignment="Left" Margin="130,0,0,45"/>
+            <TextBox Name="b2" TextChanged="b2_TextChanged" Height="20" Width="50" HorizontalAlignment="Left" Margin="130,0,0,45"/>
 
             <Label Margin="0,60,0,0">Результат =</Label>
             <Label Name="Result2" Content="" Margin="70,60,0,0"/>
@@ -49,10 +49,10 @@
             <Label>3) x^2 - 4 + 0.5^x = 0</Label>
 
             <Label Margin="0,30,0,0">a =</Label>
-            <TextBox Name="a3" Height="20" Width="50" HorizontalAlignment="Left" Margin="30,0,0,45"/>
+            <TextBox Name="a3" TextChanged="a3_TextChanged" Height="20" Width="50" HorizontalAlignment="Left" Margin="30,0,0,45"/>
 
             <Label Margin="100,30,0,0">b =</Label>
-            <TextBox Name="b3" Height="20" Width="50" HorizontalAlignment="Left" Margin="130,0,0,45"/>
+            <TextBox Name="b3" TextChanged="b3_TextChanged" Height="20" Width="50" HorizontalAlignment="Left" Margin="130,0,0,45"/>
 
             <Label Margin="0,60,0,0">Результат =</Label>
             <Label Name="Result3" Content="" Margin="70,60,0,0"/>
@@ -63,10 +63,10 @@
             <Label>4) (x - 2)^2 * lg(x + 11) = 1</Label>
 
             <Label Margin="0,30,0,0">a =</Label>
-            <TextBox Name="a4" Height="20" Width="50" HorizontalAlignment="Left" Margin="30,0,0,45"/>
+            <TextBox Name="a4" TextChanged="a4_TextChanged" Height="20" Width="50" HorizontalAlignment="Left" Margin="30,0,0,45"/>
 
             <Label Margin="100,30,0,0">b =</Label>
-            <TextBox Name="b4" Height="20" Width="50" HorizontalAlignment="Left" Margin="130,0,0,45"/>
+            <TextBox Name="b4" TextChanged="b4_TextChanged" Height="20" Width="50" HorizontalAlignment="Left" Margin="130,0,0,45"/>
 
             <Label Margin="0,60,0,0">Результат =</Label>
             <Label Name="Results4" Content="" Margin="70,60,0,0"/>

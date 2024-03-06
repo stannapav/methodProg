@@ -5,8 +5,9 @@ namespace lab1
 {
     public partial class MainWindow : Window
     {
-        Regex ageReg = new Regex(@"^[0-9]+$");
-        static double Epsilon = Math.Pow(10, -3);
+        BisectionCalc bisectionCalc = new BisectionCalc();
+        bool[,] changed = { { false, false }, { false, false }, { false, false }, { false, false } };
+        Regex numReg = new Regex(@"^[0-9]+$");
 
         public MainWindow()
         {
@@ -16,70 +17,78 @@ namespace lab1
 
         private void firstBtn_Click(object sender, RoutedEventArgs e)
         {
-            Result1.Content = bisection(Convert.ToDouble(a1.Text), Convert.ToDouble(b1.Text), equation1);
+            Result1.Content = bisectionCalc.bisection(Convert.ToDouble(a1.Text), Convert.ToDouble(b1.Text), bisectionCalc.equation1);
         }
 
         private void secondBtn_Click(object sender, RoutedEventArgs e)
         {
-            Result2.Content = bisection(Convert.ToDouble(a2.Text), Convert.ToDouble(b2.Text), equation2);
+            Result2.Content = bisectionCalc.bisection(Convert.ToDouble(a2.Text), Convert.ToDouble(b2.Text), bisectionCalc.equation2);
         }
 
         private void thirdBtn_Click(object sender, RoutedEventArgs e)
         {
-            Result3.Content = bisection(Convert.ToDouble(a3.Text), Convert.ToDouble(b3.Text), equation3);
+            Result3.Content = bisectionCalc.bisection(Convert.ToDouble(a3.Text), Convert.ToDouble(b3.Text), bisectionCalc.equation3);
         }
 
         private void forthBtn_Click(object sender, RoutedEventArgs e)
         {
-            Results4.Content = bisection(Convert.ToDouble(a4.Text), Convert.ToDouble(b4.Text), equation4);
+            Results4.Content = bisectionCalc.bisection(Convert.ToDouble(a4.Text), Convert.ToDouble(b4.Text), bisectionCalc.equation4);
         }
 
-        static double equation1(double x)
+        private void a1_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            return Math.Pow(3, x) + 2 * x - 3;
+            changed[0, 0] = (!string.IsNullOrEmpty(a1.Text) && numReg.IsMatch(a1.Text)) ? true : false;
+
+            firstBtn.IsEnabled = (changed[0, 0] && changed[0, 1]) ? true : false;
         }
 
-        static double equation2(double x)
+        private void b1_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            return 3 * Math.Pow(x, 4) - 8 * Math.Pow(x, 3) - 18 * Math.Pow(x, 2) + 2;
+            changed[0, 1] = (!string.IsNullOrEmpty(b1.Text) && numReg.IsMatch(b1.Text)) ? true : false;
+
+            firstBtn.IsEnabled = (changed[0, 0] && changed[0, 1]) ? true : false;
         }
 
-        static double equation3(double x)
+        private void a2_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            return Math.Pow(x, 2) - 4 + Math.Pow(0.5, x);
+            changed[1, 0] = (!string.IsNullOrEmpty(a2.Text) && numReg.IsMatch(a2.Text)) ? true : false;
+
+            secondBtn.IsEnabled = (changed[1, 0] && changed[1, 1]) ? true : false;
         }
 
-        static double equation4(double x)
+        private void b2_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            return Math.Pow(x - 2, 2) * Math.Log10(x + 11) - 1;
+            changed[1, 1] = (!string.IsNullOrEmpty(b2.Text) && numReg.IsMatch(b2.Text)) ? true : false;
+
+            secondBtn.IsEnabled = (changed[1, 0] && changed[1, 1]) ? true : false;
         }
 
-        static double bisection(double a, double b, Func<double, double> equation)
+        private void a3_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            if (equation(a) * equation(b) >= 0)
-            {
-                MessageBox.Show("wrong interval choose another a or b");
+            changed[2, 0] = (!string.IsNullOrEmpty(a3.Text) && numReg.IsMatch(a3.Text)) ? true : false;
 
-                return 0.0;
-            }
+            thirdBtn.IsEnabled = (changed[2, 0] && changed[2, 1]) ? true : false;
+        }
 
-            double c = a;
+        private void b3_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            changed[2, 1] = (!string.IsNullOrEmpty(b3.Text) && numReg.IsMatch(b3.Text)) ? true : false;
 
-            while (b - a >= Epsilon)
-            {
-                c = (a + b) / 2;
+            thirdBtn.IsEnabled = (changed[2, 0] && changed[2, 1]) ? true : false;
+        }
 
-                if (equation(c) == 0.0)
-                    return c;
+        private void a4_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            changed[3, 0] = (!string.IsNullOrEmpty(a4.Text) && numReg.IsMatch(a4.Text)) ? true : false;
 
-                else if (equation(c) * equation(a) < 0)
-                    b = c;
+            forthBtn.IsEnabled = (changed[3, 0] && changed[3, 1]) ? true : false;
+        }
 
-                else
-                    a = c;
-            }
+        private void b4_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            changed[3, 1] = (!string.IsNullOrEmpty(b4.Text) && numReg.IsMatch(b4.Text)) ? true : false;
 
-            return c;
+            forthBtn.IsEnabled = (changed[3, 0] && changed[3, 1]) ? true : false;
         }
     }
 }
